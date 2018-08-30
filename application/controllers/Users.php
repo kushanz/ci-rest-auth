@@ -1,9 +1,7 @@
 <?php defined('BASEPATH') OR exit('no direct script access allowed');
 
-// use Restserver\Libraries\REST_Controller;
-require APPPATH .'/libraries/REST_Controller.php';
-
-class Users extends REST_Controller {
+use Restserver\Libraries\REST_Controller;
+class Users extends Restserver\Libraries\REST_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -72,6 +70,7 @@ class Users extends REST_Controller {
 			$this->load->library('Authorization_Token');
 			// Generate token
 			$token_data = array(
+					'id' => $output->user_id,
 					'username' => $output->username,
 					'email' => $output->email,
 					'createdat' => $output->created_at,

@@ -60,3 +60,5 @@ $route['API'] = 'Rest_server';
 $route['user/register'] = 'Users/user_register';
 $route['user/login'] = 'Users/user_login';
 $route['users/all'] = 'Users/fetch_all_users';
+
+$route['article/add'] = 'Articles/addArticle';
